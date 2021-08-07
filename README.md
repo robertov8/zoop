@@ -1,6 +1,6 @@
 # Zoop
 
-**TODO: Add description**
+**Integre com a Zoop e crie os serviços financeiros do futuro**
 
 ## Installation
 
