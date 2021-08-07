@@ -64,7 +64,7 @@ defmodule Zoop.MixProject do
 
   defp aliases do
     [
-      test: ["coveralls.html"]
+      "test.html": ["coveralls.html"]
     ]
   end
 end
