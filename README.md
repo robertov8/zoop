@@ -16,7 +16,8 @@ end
 ```
 
 ```sh
-$ cp config/dev.exs.example config/dev.exs 
+$ cp config/dev.exs.example config/dev.exs
+$ cp config/test.exs.example config/test.exs
 ```
 
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)

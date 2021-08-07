@@ -1,0 +1,4 @@
+use Mix.Config
+
+config :zoop, :marketplace_id, "3249465a7753536b62545a6a684b0000"
+config :zoop, :token, "zpk_test_EzCkzFFKibGQU6HFq7EYVuxI:"
