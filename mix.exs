@@ -9,7 +9,14 @@ defmodule Zoop.MixProject do
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       docs: docs(),
-
+      aliases: aliases(),
+      test_coverage: [tool: ExCoveralls],
+      preferred_cli_env: [
+        coveralls: :test,
+        "coveralls.detail": :test,
+        "coveralls.post": :test,
+        "coveralls.html": :test
+      ],
       # Docs
       name: "Zoop"
     ]
@@ -26,13 +33,14 @@ defmodule Zoop.MixProject do
   defp deps do
     [
       {:ex_doc, "~> 0.24", only: :dev, runtime: false},
+      {:excoveralls, "~> 0.10", only: :test},
       {:tesla, "~> 1.4"},
       {:hackney, "~> 1.17.0"},
       {:jason, ">= 1.0.0"}
     ]
   end
 
-  def docs do
+  defp docs do
     [
       main: "Zoop",
       groups_for_modules: [
@@ -51,6 +59,12 @@ defmodule Zoop.MixProject do
           Zoop.Payment.Ticket
         ]
       ]
+    ]
+  end
+
+  defp aliases do
+    [
+      test: ["coveralls.html"]
     ]
   end
 end
