@@ -25,6 +25,16 @@ jobs:
         path: deps
         key: ${{ runner.os }}-mix-${{ hashFiles('**/mix.lock') }}
         restore-keys: ${{ runner.os }}-mix-
+    
+    - name: Install Elixir
+      run: wget https://packages.erlang-solutions.com/erlang/debian/pool/elixir_1.10.4-1~ubuntu~focal_all.deb && sudo dpkg -i 'elixir_1.10.4-1~ubuntu~focal_all.deb'
+    
+    - name: Install hex
+      run: mix local.hex --force
+          
+    - name: Install hex
+      run: mix local.rebar --force
+
     - name: Install dependencies
       run: mix deps.get
     - name: Run tests
